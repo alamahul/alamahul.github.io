@@ -1,0 +1,9 @@
+/* Reset previous CRA demo styles and provide layout helpers if needed */
+
+.App-header {
+  background-color: transparent;
+}
+
+.App-link {
+  color: inherit;
+}
