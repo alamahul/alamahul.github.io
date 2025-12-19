@@ -25,187 +25,110 @@ function Projects() {
   }, [filter]);
 
   return (
-    <div className="space-y-8">
-      <section className="space-y-3">
-        <div className="space-y-2">
-          <p className="text-xs uppercase tracking-[0.18em] text-emerald-300">
-            {language === "en" ? "Projects" : "Proyek"}
+    <section id="projects" className="py-20 scroll-mt-16 animate-in-up" style={{ animationDelay: '0.2s' }}>
+      <div className="space-y-8">
+        <div className="space-y-4">
+          <p className="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
+            {language === "en" ? "PROJECTS" : "PROYEK"}
           </p>
-          <h1 className="text-2xl sm:text-3xl font-semibold text-slate-50">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-50">
+              {language === "en" ? "Selected Works" : "Karya Pilihan"}
+            </h2>
+            <Tabs value={filter} onValueChange={setFilter} className="w-full md:w-auto">
+              {/* Tab Styling Adaptif */}
+              <TabsList className="bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-1">
+                <TabsTrigger value="all" className="data-[state=active]:bg-white dark:data-[state=active]:bg-slate-900 data-[state=active]:shadow-sm text-xs sm:text-sm">
+                  {language === "en" ? "All" : "Semua"}
+                </TabsTrigger>
+                <TabsTrigger value="web-apps" className="data-[state=active]:bg-white dark:data-[state=active]:bg-slate-900 data-[state=active]:shadow-sm text-xs sm:text-sm">
+                  {language === "en" ? "Web apps" : "Aplikasi Web"}
+                </TabsTrigger>
+                <TabsTrigger value="learning" className="data-[state=active]:bg-white dark:data-[state=active]:bg-slate-900 data-[state=active]:shadow-sm text-xs sm:text-sm">
+                  {language === "en" ? "Learning" : "Belajar"}
+                </TabsTrigger>
+              </TabsList>
+            </Tabs>
+          </div>
+          <p className="text-base text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
             {language === "en"
-              ? "Selected projects that reflect how I build"
-              : "Beberapa proyek yang mencerminkan cara saya membangun"}
-          </h1>
-          <p className="text-sm text-slate-400 max-w-2xl">
-            {language === "en"
-              ? "From full-stack e-commerce platforms to school registration systems and public service tools, I enjoy turning real needs into working web applications."
-              : "Dari platform e-commerce full-stack hingga sistem pendaftaran sekolah dan alat layanan publik, saya senang mengubah kebutuhan nyata menjadi aplikasi web yang bekerja."}
+              ? "From full-stack e-commerce platforms to public service tools, converting real needs into working applications."
+              : "Dari platform e-commerce full-stack hingga alat layanan publik, mengubah kebutuhan nyata menjadi aplikasi yang bekerja."}
           </p>
         </div>
 
-        <Tabs
-          value={filter}
-          onValueChange={setFilter}
-          className="w-full mt-2"
-        >
-          <TabsList className="bg-slate-900/70 border border-slate-800">
-            <TabsTrigger value="all" className="text-xs">
-              {language === "en" ? "All" : "Semua"}
-            </TabsTrigger>
-            <TabsTrigger value="web-apps" className="text-xs">
-              {language === "en" ? "Web apps" : "Aplikasi web"}
-            </TabsTrigger>
-            <TabsTrigger value="learning" className="text-xs">
-              {language === "en" ? "Learning projects" : "Proyek belajar"}
-            </TabsTrigger>
-          </TabsList>
-          <TabsContent value={filter} className="mt-4">
-            <div className="grid gap-5 md:grid-cols-2">
-              {projects.map((project) => (
-                <Card
-                  key={project.id}
-                  className="border-slate-800 bg-slate-900/60 hover:bg-slate-900 transition-colors flex flex-col h-full"
-                >
-                  <CardContent className="p-5 space-y-3 flex-1 flex flex-col">
-                    <div className="flex items-start justify-between gap-2">
-                      <div>
-                        <p className="text-sm font-medium text-slate-50">
-                          {getLocalizedText(project.title, language)}
-                        </p>
-                        {project.organization && (
-                          <p className="text-xs text-slate-400">
-                            {project.organization}
-                          </p>
-                        )}
-                      </div>
-                      <Badge className="bg-emerald-500/15 border-emerald-400/40 text-emerald-200 text-[11px] px-2 py-0.5">
-                        {language === "en" ? "Project" : "Proyek"}
-                      </Badge>
-                    </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {projects.map((project) => (
+            <Card
+              key={project.id}
+              className="group border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900/40 hover:border-emerald-500/40 dark:hover:border-emerald-500/30 transition-all flex flex-col h-full hover:shadow-lg"
+            >
+              {/* AREA GAMBAR */}
+              <div className="relative aspect-video overflow-hidden bg-slate-100 dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800">
+                {/* Overlay saat hover (Opsional - biar ada interaksi) */}
+                <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/10 z-10 transition-colors duration-300" />
 
-                    {project.period && (
-                      <p className="text-xs text-slate-400">
-                        {getLocalizedText(project.period, language)}
+                {/* Gambar */}
+                <img
+                  src={project.image || "https://placehold.co/180x180/4f46e5/ffffff?text=Gambar+Proyek"} // Fallback image jika belum ada
+                  alt={project.title}
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out"
+                />
+              </div>
+              <CardContent className="p-6 space-y-5 flex-1 flex flex-col">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="space-y-1">
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-slate-50 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                      {getLocalizedText(project.title, language)}
+                    </h3>
+                    {project.organization && (
+                      <p className="text-xs font-medium text-slate-500 uppercase tracking-wider">
+                        {project.organization}
                       </p>
                     )}
-
-                    <p className="text-xs text-slate-300 leading-relaxed">
-                      {getLocalizedText(project.summary, language)}
-                    </p>
-
-                    <ul className="mt-1 space-y-1.5 text-xs text-slate-400 list-disc list-inside">
-                      {project.features[language === "en" ? "en" : "id"].map(
-                        (feature, idx) => (
-                          <li key={idx}>{feature}</li>
-                        )
-                      )}
-                    </ul>
-
-                    <div className="mt-3 flex flex-wrap gap-1.5">
-                      {project.techStack.map((tech) => (
-                        <Badge
-                          key={tech}
-                          variant="outline"
-                          className="border-slate-700 bg-slate-900/80 text-[11px] font-normal px-2 py-0.5"
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-
-                    <div className="mt-3 flex items-center justify-between text-[11px] text-slate-400">
-                      <div className="inline-flex items-center gap-1">
-                        <Layers3 className="h-3.5 w-3.5 text-emerald-300" />
-                        <span>
-                          {language === "en"
-                            ? `${project.skills.length} focused skills`
-                            : `${project.skills.length} keahlian terpakai`}
-                        </span>
-                      </div>
-                      <button
-                        type="button"
-                        className="inline-flex items-center gap-1 rounded-full border border-slate-700 px-2 py-0.5 text-[11px] text-slate-200 hover:border-emerald-400 hover:text-emerald-200 transition-colors"
-                        onClick={() => {
-                          const message =
-                            language === "en"
-                              ? "This is a portfolio preview. Live link or GitHub can be added later."
-                              : "Ini masih tampilan portfolio. Link live atau GitHub bisa ditambahkan nanti.";
-                          alert(message);
-                        }}
-                      >
-                        <span>
-                          {language === "en" ? "Details" : "Detail"}
-                        </span>
-                        <ExternalLink className="h-3 w-3" />
-                      </button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
-      </section>
-
-      <section className="space-y-3">
-        <div className="flex items-center gap-2">
-          <h2 className="text-lg sm:text-xl font-semibold text-slate-50">
-            {language === "en" ? "Licenses & Certifications" : "Lisensi & Sertifikasi"}
-          </h2>
-        </div>
-        <div className="grid gap-4 md:grid-cols-2">
-          {profileData.certifications.map((cert) => (
-            <Card
-              key={cert.id}
-              className="border-slate-800 bg-slate-900/60"
-            >
-              <CardContent className="p-4 space-y-2 text-xs">
-                <div className="flex items-start justify-between gap-2">
-                  <div>
-                    <p className="font-medium text-slate-50 text-sm">
-                      {cert.title}
-                    </p>
-                    <p className="text-slate-400">{cert.issuer}</p>
                   </div>
-                  <Badge className="bg-slate-900 border-slate-700 text-[11px] text-slate-300 px-2 py-0.5">
-                    {language === "en" ? "Certificate" : "Sertifikat"}
+                  <Badge className="bg-emerald-50 text-emerald-700 border-emerald-100 dark:bg-emerald-500/10 dark:text-emerald-300 dark:border-emerald-500/20 px-2.5 py-1">
+                    {language === "en" ? "Project" : "Proyek"}
                   </Badge>
                 </div>
-                <p className="text-slate-400">{cert.date}</p>
-                {cert.credentialId && (
-                  <p className="text-slate-500">
-                    ID: <span className="font-mono">{cert.credentialId}</span>
-                  </p>
-                )}
-                {cert.description && (
-                  <p className="text-slate-300 leading-relaxed">
-                    {getLocalizedText(cert.description, language)}
-                  </p>
-                )}
-                <div className="flex flex-wrap gap-1.5 mt-1">
-                  {cert.skills.map((skill) => (
-                    <Badge
-                      key={skill}
-                      variant="outline"
-                      className="border-slate-700 bg-slate-900/80 text-[11px] font-normal px-2 py-0.5"
+
+                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  {getLocalizedText(project.summary, language)}
+                </p>
+
+                <div className="mt-auto pt-4 space-y-4">
+                  <div className="flex flex-wrap gap-2">
+                    {project.techStack.map((tech) => (
+                      <Badge
+                        key={tech}
+                        variant="secondary"
+                        className="bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 text-xs font-medium"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-800">
+                    <div className="flex items-center gap-1.5 text-xs text-slate-500">
+                      <Layers3 className="h-3.5 w-3.5" />
+                      <span>{project.skills.length} {language === "en" ? "technologies" : "teknologi"}</span>
+                    </div>
+                    <button
+                      onClick={() => alert(language === "en" ? "Coming soon!" : "Segera hadir!")}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-colors"
                     >
-                      {skill}
-                    </Badge>
-                  ))}
+                      {language === "en" ? "View Details" : "Lihat Detail"}
+                      <ExternalLink className="h-3.5 w-3.5" />
+                    </button>
+                  </div>
                 </div>
-                {cert.associatedProjectId && (
-                  <p className="mt-2 text-[11px] text-emerald-300">
-                    {language === "en"
-                      ? "Includes project: Sharing Story App (PWA web app for online stories)."
-                      : "Mencakup proyek: Sharing Story App (WebApp PWA untuk berbagi cerita online)."}
-                  </p>
-                )}
               </CardContent>
             </Card>
           ))}
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
 

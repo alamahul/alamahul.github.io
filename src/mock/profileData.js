@@ -321,6 +321,7 @@ My goal is to contribute to impactful web projects, collaborate with like-minded
         id: "Website E-Commerce Full-Stack",
         en: "Full-Stack E-Commerce Website",
       },
+      image: "./images/projects/E-Commerce_Leather_Cosmetic_Fullstack.PNG",
       period: {
         id: "Okt 2025",
         en: "Oct 2025",
@@ -381,6 +382,7 @@ My goal is to contribute to impactful web projects, collaborate with like-minded
         id: "Website Pendaftaran Peserta Didik Baru",
         en: "New Student Registration Website",
       },
+      image: "https://placehold.co/180x180/4f46e5/ffffff?text=Gambar+PPDB",
       organization: "SMK Santana 2",
       role: {
         id: "Web Developer",
@@ -413,6 +415,7 @@ My goal is to contribute to impactful web projects, collaborate with like-minded
         id: "Website Pengaduan Masyarakat Kabupaten",
         en: "District Public Complaints Website",
       },
+      image: "https://placehold.co/180x180/4f46e5/ffffff?text=Gambar+PengaduanMasyarakat",
       organization: "SMK Santana 2",
       role: {
         id: "Web Developer",
@@ -445,6 +448,7 @@ My goal is to contribute to impactful web projects, collaborate with like-minded
         id: "Sharing Story App",
         en: "Sharing Story Web App",
       },
+      image: "./images/projects/sharing-story-app.png",
       role: {
         id: "Front-End & PWA Developer",
         en: "Front-End & PWA Developer",

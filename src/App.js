@@ -1,6 +1,8 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
+// Hapus import react-router-dom karena tidak dipakai lagi untuk routing halaman
+// import { BrowserRouter, Routes, Route } from "react-router-dom"; 
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -13,16 +15,13 @@ function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<MainLayout />}>
-              <Route index element={<Home />} />
-              <Route path="about" element={<About />} />
-              <Route path="projects" element={<Projects />} />
-              <Route path="contact" element={<Contact />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
+        {/* MainLayout sekarang membungkus seluruh konten */}
+        <MainLayout>
+          <Home />
+          <About />
+          <Projects />
+          <Contact />
+        </MainLayout>
       </LanguageProvider>
     </ThemeProvider>
   );
