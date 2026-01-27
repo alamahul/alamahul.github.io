@@ -2,7 +2,8 @@ import { Code2, Layout, Database, Smartphone, Globe, Cpu, Server, Brain } from '
 import { NavItem, Service, Skill, Experience, Project, Certificate, Language } from './types';
 
 // export const PROFILE_IMAGE = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop";
-export const PROFILE_IMAGE = "./assets/images/Alamahul_Bayan.jpg";
+// export const PROFILE_IMAGE = "./assets/images/Alamahul_Bayan.jpg";
+export const PROFILE_IMAGE = "./assets/images/Alamahul_Bayan_2.jpg";
 
 export const NAV_ITEMS: Record<Language, NavItem[]> = {
   id: [
