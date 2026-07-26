@@ -15,8 +15,6 @@ const About: React.FC<AboutProps> = ({ language }) => {
   return (
     <section id="about" className="py-20 bg-slate-100/50 dark:bg-slate-900/40 relative transition-colors duration-300">
       <div className="container mx-auto px-6">
-
-        {/* Section Title */}
         <div className="text-center mb-16">
           <span className="text-primary font-semibold tracking-wider uppercase text-sm">{t.titlePre}</span>
           <h2 className="text-3xl md:text-4xl font-bold mt-2 text-slate-900 dark:text-white">{t.title}</h2>
@@ -24,74 +22,74 @@ const About: React.FC<AboutProps> = ({ language }) => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-
           {/* Bio & Skills */}
           <div>
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-6 animate-fade-in-up">
               <User className="text-primary w-6 h-6" />
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{t.profileTitle}</h3>
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white animate-fade-in-up">{t.title}</h3>
             </div>
-            <div className="text-slate-600 dark:text-slate-400 leading-relaxed mb-8 space-y-4">
+            <div className="text-slate-600 dark:text-slate-400 leading-relaxed mb-8 space-y-4 animate-fade-in-up">
               <p>
                 {t.profileDesc1} <strong className="text-slate-900 dark:text-white">Alamahul Bayan</strong>, {t.profileDesc2}
               </p>
               <p>
                 {t.profileDesc3} <span className="text-primary">Laravel</span>, <span className="text-primary">Express.js</span>, <span className="text-primary">React.js</span>, & MongoDB.
               </p>
-              <p className="italic border-l-2 border-primary pl-4 text-slate-600 dark:text-slate-300">
+              <p className="italic border-l-2 border-primary pl-4 text-slate-600 dark:text-slate-300 animate-fade-in-up">
                 {t.quote}
               </p>
             </div>
 
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-6 animate-fade-in-up">
               <Code className="text-secondary w-6 h-6" />
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{t.skillsTitle}</h3>
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white animate-fade-in-up">{t.skillsTitle}</h3>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-4 animate-fade-in-up">
               {skills.map((skill) => (
                 <div key={skill.name}>
                   <div className="flex justify-between mb-1">
                     <span className="text-sm font-medium text-slate-700 dark:text-slate-300">{skill.name}</span>
                     <span className="text-xs text-slate-500">{skill.category}</span>
                   </div>
-                  {/* <div className="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2.5">
-                    <div 
-                      className="bg-gradient-to-r from-primary to-secondary h-2.5 rounded-full transition-all duration-1000 ease-out" 
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
+                  {/* <div className="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
+                    <div className="bg-gradient-to-r from-primary to-secondary h-2.5 rounded-full transition-all duration-1000 ease-out"
+                      style={{ width: `${skill.level}%` }}>
+                    </div>
                   </div> */}
-                  {/* terlalu bias jadi dihilangkan terlebih dahulu */}
                 </div>
               ))}
             </div>
           </div>
 
           {/* Timeline Experience & Education */}
-          <div>
-            <div className="flex items-center gap-3 mb-8">
+          <div className="animate-fade-in-up">
+            <div className="flex items-center gap-3 mb-8 animate-fade-in-up">
               <Briefcase className="text-primary w-6 h-6" />
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{t.expTitle}</h3>
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white animate-fade-in-up">Pengalaman & Pendidikan</h3>
             </div>
 
-            <div className="relative border-l border-slate-300 dark:border-slate-700 ml-3 space-y-8">
+            <div className="relative border-l border-slate-300 dark:border-slate-700 ml-3 space-y-8 animate-fade-in-up">
               {experience.map((item) => (
-                <div key={item.id} className="ml-6 relative group">
-                  <div className="absolute -left-[31px] bg-white dark:bg-slate-900 border-2 border-primary w-4 h-4 rounded-full mt-1.5 group-hover:scale-125 transition-transform"></div>
-                  <div className="p-6 bg-white dark:bg-slate-800/30 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:shadow-md dark:hover:bg-slate-800/60 transition-all">
-                    <div className="flex flex-wrap justify-between items-start mb-2 gap-2">
+                <div key={item.id} className="ml-6 relative group animate-fade-in-up">
+                  <div className="absolute -left-[31px] bg-white dark:bg-slate-900 border-2 border-primary w-4 h-4 rounded-full mt-1.5 group-hover:scale-125 transition-transform">
+                    <div className="animate-pulse" />
+                  </div>
+                  <div className="p-6 bg-white dark:bg-slate-800/30 border border-slate-200 dark:border-slate-700/50 rounded-xl hover:shadow-md dark:hover:bg-slate-800/60 transition-all duration-500">
+                    <div className="flex flex-wrap justify-between items-start mb-2 gap-2 animate-fade-in-up">
                       <div>
-                        <h4 className="text-xl font-bold text-slate-900 dark:text-white">{item.role}</h4>
-                        <span className="text-primary text-sm font-medium">{item.company}</span>
+                        <h4 className="text-xl font-bold text-slate-900 dark:text-white animate-fade-in-up">{item.role}</h4>
+                        <span className="text-primary text-sm font-medium animate-fade-in-up">{item.company}</span>
                       </div>
                       <span className="px-3 py-1 bg-slate-100 dark:bg-slate-700/50 rounded-full text-xs text-slate-600 dark:text-slate-300 whitespace-nowrap">
                         {item.period}
                       </span>
                     </div>
-                    <p className="text-slate-600 dark:text-slate-400 text-sm mt-3 leading-relaxed">
+                    <p className="text-slate-600 dark:text-slate-400 text-sm mt-3 leading-relaxed animate-fade-in-up">
                       {item.description}
                     </p>
-                    <div className="mt-4 flex items-center gap-2 text-xs text-slate-500 font-medium uppercase tracking-wide">
-                      {item.type === 'work' ? <Briefcase size={12} /> : <GraduationCap size={12} />}
+                    <div className="mt-4 flex items-center gap-2 text-xs text-slate-500 font-medium uppercase tracking-wide animate-fade-in-up">
+                      <Briefcase size={12} animate-pulse className="group-hover:scale-110" />
+                      <GraduationCap size={12} animate-pulse className="group-hover:scale-110" />
                       {item.type === 'work' ? t.work : t.edu}
                     </div>
                   </div>

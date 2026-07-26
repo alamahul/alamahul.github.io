@@ -90,6 +90,10 @@ export const SKILLS: Record<Language, Skill[]> = {
     { name: 'Laravel / PHP', level: 80, category: 'Backend' },
     { name: 'Java', level: 75, category: 'Backend' },
     { name: 'Tailwind CSS', level: 90, category: 'Frontend' },
+    { name: 'TypeScript', level: 85, category: 'Frontend' },
+    { name: 'PostgreSQL / Prisma', level: 85, category: 'Backend' },
+    { name: 'Python / Machine Learning', level: 80, category: 'Tools' },
+    { name: 'Docker / CI/CD', level: 75, category: 'Tools' },
     { name: 'Git / GitHub', level: 85, category: 'Tools' },
     { name: 'AWS Cloud', level: 70, category: 'Tools' },
   ],
@@ -100,6 +104,10 @@ export const SKILLS: Record<Language, Skill[]> = {
     { name: 'Laravel / PHP', level: 80, category: 'Backend' },
     { name: 'Java', level: 75, category: 'Backend' },
     { name: 'Tailwind CSS', level: 90, category: 'Frontend' },
+    { name: 'TypeScript', level: 85, category: 'Frontend' },
+    { name: 'PostgreSQL / Prisma', level: 85, category: 'Backend' },
+    { name: 'Python / Machine Learning', level: 80, category: 'Tools' },
+    { name: 'Docker / CI/CD', level: 75, category: 'Tools' },
     { name: 'Git / GitHub', level: 85, category: 'Tools' },
     { name: 'AWS Cloud', level: 70, category: 'Tools' },
   ]
@@ -107,6 +115,30 @@ export const SKILLS: Record<Language, Skill[]> = {
 
 export const EXPERIENCE_DATA: Record<Language, Experience[]> = {
   id: [
+    {
+      id: 5,
+      role: 'Independent Developer',
+      company: 'Freelance',
+      period: 'Okt 2022 - Sekarang',
+      description: 'Mengembangkan aplikasi web full-stack dan solusi terintegrasi AI menggunakan teknologi web dan backend modern. Membangun aplikasi yang mengintegrasikan antarmuka frontend, layanan backend, database, dan API eksternal. Menerapkan alur kerja Docker, GitHub Actions, dan CI/CD.',
+      type: 'work'
+    },
+    {
+      id: 6,
+      role: 'Anggota Komunitas',
+      company: 'Dicoding Community ITG',
+      period: 'Des 2025 - Sekarang',
+      description: 'Aktif dalam aktivitas komunitas teknologi, proyek kolaboratif, dan pengembangan keahlian profesional.',
+      type: 'work'
+    },
+    {
+      id: 7,
+      role: 'Software Development Learning',
+      company: 'Self-Taught',
+      period: 'Agu 2025 - Sekarang',
+      description: 'Terus mengembangkan keterampilan rekayasa perangkat lunak melalui platform pembelajaran online. Mempelajari pengembangan web, cloud computing, AI, dan praktik pengembangan perangkat lunak.',
+      type: 'education'
+    },
     {
       id: 1,
       role: 'Cohort Path Front End & Backend with AI',
@@ -141,6 +173,30 @@ export const EXPERIENCE_DATA: Record<Language, Experience[]> = {
     }
   ],
   en: [
+    {
+      id: 5,
+      role: 'Independent Developer',
+      company: 'Freelance',
+      period: 'Oct 2022 - Present',
+      description: 'Developed full-stack web applications and AI-integrated solutions using modern web and backend technologies. Built applications integrating frontend interfaces, backend services, databases, and external APIs.',
+      type: 'work'
+    },
+    {
+      id: 6,
+      role: 'Community Member',
+      company: 'Dicoding Community ITG',
+      period: 'Dec 2025 - Present',
+      description: 'Active in technology community activities, collaborative projects, and professional skill development.',
+      type: 'work'
+    },
+    {
+      id: 7,
+      role: 'Software Development Learning',
+      company: 'Self-Taught',
+      period: 'Aug 2025 - Present',
+      description: 'Continuously developing software engineering skills through online learning platforms. Studying web development, cloud computing, AI, and software development practices.',
+      type: 'education'
+    },
     {
       id: 1,
       role: 'Cohort Path Front End & Backend with AI',
@@ -179,6 +235,42 @@ export const EXPERIENCE_DATA: Record<Language, Experience[]> = {
 export const PROJECTS: Record<Language, Project[]> = {
   id: [
     {
+      id: 4,
+      title: 'E-Wallet Sentiment Monitoring',
+      description: 'Platform analitik data dan AI full-stack (dalam pengembangan) untuk menganalisis sentimen ulasan pengguna e-wallet.',
+      tags: ['React', 'Express.js', 'Python', 'Scikit-learn', 'PostgreSQL', 'Prisma', 'Docker', 'CI/CD'],
+      imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80',
+      demoUrl: '#',
+      repoUrl: 'https://github.com/alamahul/e-wallet-sentiment'
+    },
+    {
+      id: 5,
+      title: 'SOTOYS GRT',
+      description: 'Platform e-commerce multi-peran yang menghubungkan petani lokal dengan pelanggan. Terintegrasi dengan AgriBot (Gemini API).',
+      tags: ['React', 'TypeScript', 'Vite', 'Tailwind', 'Express.js', 'PostgreSQL', 'Supabase', 'Midtrans'],
+      imageUrl: './assets/images/proyek/sotoys_grt.JPG',
+      demoUrl: 'https://sotoys-grt-frontend.vercel.app/',
+      repoUrl: '#'
+    },
+    {
+      id: 6,
+      title: 'AgriConnect',
+      description: 'Platform E-Commerce Agribisnis Digital (Prototipe). Mengintegrasikan chatbot AI percakapan bertenaga Gemini API.',
+      tags: ['React.js', 'Vite', 'Tailwind CSS', 'Gemini API', 'Recharts'],
+      imageUrl: './assets/images/proyek/agri-connect.JPG',
+      demoUrl: 'https://agri-connect-123.vercel.app',
+      repoUrl: '#'
+    },
+    {
+      id: 7,
+      title: 'Clinician Vitality AI',
+      description: 'Prototipe AI untuk memprediksi risiko kelelahan (burnout) tenaga medis menggunakan machine learning dan metadata beban kerja.',
+      tags: ['React', 'Conversational AI', 'Machine Learning', 'System Design'],
+      imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80',
+      demoUrl: '#',
+      repoUrl: '#'
+    },
+    {
       id: 1,
       title: 'Website E-Commerce Full-Stack',
       description: 'Platform e-commerce modern MERN Stack dengan fitur otentikasi JWT, manajemen produk, keranjang belanja, dan pembayaran via Midtrans.',
@@ -201,12 +293,48 @@ export const PROJECTS: Record<Language, Project[]> = {
       title: 'Sistem Absensi Pegawai Desa',
       description: 'Aplikasi untuk absensi pegawai desa berbasis lokasi dan foto',
       tags: ['Code Ignitor', 'PHP', 'MySQL', 'Kamera', 'Geo-Lokasi'],
-      imageUrl: './assets/images/proyek/sistem_absensi_pegawai_desa_V2.png',
+      imageUrl: './assets/images/proyek/sistem_absensi_pegawai_desa_V2.PNG',
       demoUrl: '#',
       repoUrl: 'https://github.com/alamahul/TB_BASDAT_V2'
     }
   ],
   en: [
+    {
+      id: 4,
+      title: 'E-Wallet Sentiment Monitoring',
+      description: 'Full-stack AI & Data Analytics Platform (In Development) for analyzing e-wallet user reviews.',
+      tags: ['React', 'Express.js', 'Python', 'Scikit-learn', 'PostgreSQL', 'Prisma', 'Docker', 'CI/CD'],
+      imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80',
+      demoUrl: '#',
+      repoUrl: 'https://github.com/alamahul/e-wallet-sentiment'
+    },
+    {
+      id: 5,
+      title: 'SOTOYS GRT',
+      description: 'Multi-role e-commerce platform connecting local farmers with customers. Integrated with AgriBot (Gemini API).',
+      tags: ['React', 'TypeScript', 'Vite', 'Tailwind', 'Express.js', 'PostgreSQL', 'Supabase', 'Midtrans'],
+      imageUrl: './assets/images/proyek/sotoys_grt.JPG',
+      demoUrl: 'https://sotoys-grt-frontend.vercel.app/',
+      repoUrl: '#'
+    },
+    {
+      id: 6,
+      title: 'AgriConnect',
+      description: 'Digital Agribusiness E-Commerce Platform (Prototype). Integrates a Gemini API-powered conversational AI chatbot.',
+      tags: ['React.js', 'Vite', 'Tailwind CSS', 'Gemini API', 'Recharts'],
+      imageUrl: './assets/images/proyek/agri-connect.JPG',
+      demoUrl: 'https://agri-connect-123.vercel.app',
+      repoUrl: '#'
+    },
+    {
+      id: 7,
+      title: 'Clinician Vitality AI',
+      description: 'AI-driven system prototype for predicting clinician burnout risk using machine learning and workforce metadata.',
+      tags: ['React', 'Conversational AI', 'Machine Learning', 'System Design'],
+      imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80',
+      demoUrl: '#',
+      repoUrl: '#'
+    },
     {
       id: 1,
       title: 'Full-Stack E-Commerce Website',
@@ -230,7 +358,7 @@ export const PROJECTS: Record<Language, Project[]> = {
       title: 'Village Employee Attendance System',
       description: 'An application for village employee attendance based on location and camera photos.',
       tags: ['CodeIgniter', 'PHP', 'MySQL', 'Camera', 'Geo-Location'],
-      imageUrl: './assets/images/proyek/sistem_absensi_pegawai_desa_V2.png',
+      imageUrl: './assets/images/proyek/sistem_absensi_pegawai_desa_V2.PNG',
       demoUrl: '#',
       repoUrl: 'https://github.com/alamahul/TB_BASDAT_V2'
     }
@@ -239,6 +367,27 @@ export const PROJECTS: Record<Language, Project[]> = {
 
 export const CERTIFICATES: Record<Language, Certificate[]> = {
   id: [
+    {
+      id: 5,
+      title: 'Program ASAH',
+      issuer: 'Dicoding Indonesia',
+      date: '2025',
+      url: '#'
+    },
+    {
+      id: 6,
+      title: 'Fundamental Backend with JavaScript',
+      issuer: 'Dicoding Indonesia',
+      date: '2025',
+      url: '#'
+    },
+    {
+      id: 7,
+      title: 'Fundamentals of AI & Data Science',
+      issuer: 'Dicoding Indonesia',
+      date: '2025',
+      url: '#'
+    },
     {
       id: 1,
       title: 'Belajar Pengembangan Web Intermediate',
@@ -269,6 +418,27 @@ export const CERTIFICATES: Record<Language, Certificate[]> = {
     }
   ],
   en: [
+    {
+      id: 5,
+      title: 'ASAH Program',
+      issuer: 'Dicoding Indonesia',
+      date: '2025',
+      url: '#'
+    },
+    {
+      id: 6,
+      title: 'Fundamental Backend with JavaScript',
+      issuer: 'Dicoding Indonesia',
+      date: '2025',
+      url: '#'
+    },
+    {
+      id: 7,
+      title: 'Fundamentals of AI & Data Science',
+      issuer: 'Dicoding Indonesia',
+      date: '2025',
+      url: '#'
+    },
     {
       id: 1,
       title: 'Intermediate Web Development',

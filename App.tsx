@@ -15,8 +15,8 @@ import { UI_TEXT } from './constants';
 const App: React.FC = () => {
   // State for background intensity, default is 0.5 (50%)
   const [intensity, setIntensity] = useState(0.5);
-  // State for dark mode, default true
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  // State for dark mode, default false (light mode)
+  const [isDarkMode, setIsDarkMode] = useState(false);
   // State for language, default 'id'
   const [language, setLanguage] = useState<Language>('id');
 
